@@ -1,0 +1,12 @@
+name: CI
+on:
+  workflow_dispatch:
+jobs:
+  detect_secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Detec secret
+        run: |
+             pip install detect-secrets
+             detect-secrets scan
